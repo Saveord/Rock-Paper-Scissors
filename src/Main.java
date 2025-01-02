@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /*
 Rock Paper Scissors
 Rules:
@@ -9,13 +7,9 @@ computer randomly picks rock, paper, or scissors
 -finds out who won at the end
  */
 public class Main {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         System.out.println("Hello gitgoggergamer!");
-        System.out.println("Enter rock, paper, or scissors:");
-        Scanner myObj = new Scanner(System.in);
-        String choice = myObj.nextLine();
-        CompareScore c = new CompareScore();
-        c.compare(choice);
+        Play p = new Play();
+        p.playing();
     }
 }
