@@ -1,3 +1,5 @@
+package game;
+
 public class CompareScore
 {
     public int compare(String choice, int roundnum)

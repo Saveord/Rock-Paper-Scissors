@@ -32,9 +32,12 @@ public class DisplayImage
         //lbl.setIcon(icon);
         frame.add(lbl);
         ImagePanel bleh = new ImagePanel();
-        bleh.addImages("C:\\Program Files\\IntelliJ\\IdeaProjects\\game\\src\\resources\\rock.jpg", 250, 250);
-        bleh.addImages("C:\\Program Files\\IntelliJ\\IdeaProjects\\game\\src\\resources\\paper.jpg", 250, 250);
-        bleh.addImages("C:\\Program Files\\IntelliJ\\IdeaProjects\\game\\src\\resources\\scissors.jpg", 250, 250);
+        bleh.addImages("C:\\Program Files\\IntelliJ\\IdeaProjects\\game\\src\\resources\\rock.jpg", 250, 250)
+                .addActionListener(new ButtonClickHandler("rock"));
+        bleh.addImages("C:\\Program Files\\IntelliJ\\IdeaProjects\\game\\src\\resources\\paper.jpg", 250, 250)
+                .addActionListener(new ButtonClickHandler("paper"));;
+        bleh.addImages("C:\\Program Files\\IntelliJ\\IdeaProjects\\game\\src\\resources\\scissors.jpg", 250, 250)
+                .addActionListener(new ButtonClickHandler("scissors"));;
         frame.add(bleh);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
