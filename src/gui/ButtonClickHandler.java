@@ -4,9 +4,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import game.Play;
 
+import javax.swing.*;
+
 public class ButtonClickHandler implements ActionListener
 {
     private String msg;
+    Play p = new Play(3);
 
     public ButtonClickHandler(String msg)
     {
@@ -15,8 +18,8 @@ public class ButtonClickHandler implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        System.out.println(msg);
-        Play p = new Play();
+        JButton btn = (JButton)e.getSource();
+        System.out.println(btn.getName());
         p.playing(msg);
     }
 }

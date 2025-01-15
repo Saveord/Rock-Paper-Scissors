@@ -3,6 +3,7 @@ package gui;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -32,12 +33,13 @@ public class DisplayImage
         //lbl.setIcon(icon);
         frame.add(lbl);
         ImagePanel bleh = new ImagePanel();
-        bleh.addImages("C:\\Program Files\\IntelliJ\\IdeaProjects\\game\\src\\resources\\rock.jpg", 250, 250)
-                .addActionListener(new ButtonClickHandler("rock"));
-        bleh.addImages("C:\\Program Files\\IntelliJ\\IdeaProjects\\game\\src\\resources\\paper.jpg", 250, 250)
-                .addActionListener(new ButtonClickHandler("paper"));;
-        bleh.addImages("C:\\Program Files\\IntelliJ\\IdeaProjects\\game\\src\\resources\\scissors.jpg", 250, 250)
-                .addActionListener(new ButtonClickHandler("scissors"));;
+        ActionListener listener = new ButtonClickHandler("rock");
+        bleh.addImages("rock", "C:\\Program Files\\IntelliJ\\IdeaProjects\\game\\src\\resources\\rock.jpg", 250, 250)
+                .addActionListener(listener);
+        bleh.addImages("paper", "C:\\Program Files\\IntelliJ\\IdeaProjects\\game\\src\\resources\\paper.jpg", 250, 250)
+                .addActionListener(listener);;
+        bleh.addImages("scissors", "C:\\Program Files\\IntelliJ\\IdeaProjects\\game\\src\\resources\\scissors.jpg", 250, 250)
+                .addActionListener(listener);;
         frame.add(bleh);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

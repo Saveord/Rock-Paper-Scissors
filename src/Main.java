@@ -11,7 +11,7 @@ computer randomly picks rock, paper, or scissors
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello gitgoggergamer!");
-        Play p = new Play();
+        Play p = new Play(3);
         p.playing();
     }
 }

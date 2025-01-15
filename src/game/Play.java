@@ -4,6 +4,14 @@ import java.util.Scanner;
 
 public class Play
 {
+    int count = 0;
+    int totalRounds = 0;
+    int sum = 0;
+
+    public Play(int rounds)
+    {
+        totalRounds = rounds;
+    }
     public void playing()
     {
         int sum = 0;
@@ -37,18 +45,23 @@ public class Play
 
     public void playing(String choice)
     {
-        int sum = 0;
         CompareScore c = new CompareScore();
-        for (int i = 0; i < 3; i++)
-        {
-            int k = c.compare(choice.toLowerCase(), i);
+            int k = c.compare(choice.toLowerCase(), count);
             if (k == 2025)
             {
-                i -= 1;
-                continue;
+               return;
             }
+
             sum += k;
-        }
+            count += 1;
+
+            if (count < totalRounds)
+            {
+                return;
+            }
+
+            count = 0;
+
         if (sum == 0)
         {
             System.out.println("Draw");
