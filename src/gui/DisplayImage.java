@@ -41,6 +41,37 @@ public class DisplayImage
         bleh.addImages("scissors", "C:\\Program Files\\IntelliJ\\IdeaProjects\\game\\src\\resources\\scissors.jpg", 250, 250)
                 .addActionListener(listener);;
         frame.add(bleh);
+        JPanel resultContainer = new JPanel();
+        frame.add(resultContainer);
+
+        JPanel resultPanel = new JPanel();
+        resultPanel.setLayout(new BoxLayout(resultPanel,BoxLayout.Y_AXIS));
+
+        JLabel lbl2 = new JLabel("Results");
+        lbl2.setFont(new Font("Serif", Font.BOLD, 40));
+        resultPanel.add(lbl2);
+        resultPanel.setBackground(Color.orange);
+
+        JLabel lbl3 = new JLabel("You picked: ");
+        lbl3.setFont(new Font("Serif", Font.PLAIN, 30));
+        resultPanel.add(lbl3);
+
+        JLabel lbl4 = new JLabel("Computer picked: ");
+        lbl4.setFont(new Font("Serif", Font.PLAIN, 30));
+        resultPanel.add(lbl4);
+
+        JLabel lbl5 = new JLabel("You win/lose/draw");
+        lbl5.setFont(new Font("Serif", Font.PLAIN, 30));
+        resultPanel.add(lbl5);
+
+        ObjectStore.lbl3 = lbl3;
+        ObjectStore.lbl4 = lbl4;
+        ObjectStore.lbl5 = lbl5;
+
+        resultContainer.add(resultPanel);
+        resultContainer.setBackground(Color.orange);
+        frame.add(resultContainer);
+
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }

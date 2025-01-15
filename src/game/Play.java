@@ -1,5 +1,7 @@
 package game;
 
+import gui.ObjectStore;
+
 import java.util.Scanner;
 
 public class Play
@@ -65,14 +67,17 @@ public class Play
         if (sum == 0)
         {
             System.out.println("Draw");
+            ObjectStore.lbl5.setText("Draw");
         }
         else if (sum > 0)
         {
             System.out.println("YOU WINNNN!!");
+            ObjectStore.lbl5.setText("YOU WINNNN!!");
         }
         else
         {
             System.out.println("YOU LOSEEEE! :(((");
+            ObjectStore.lbl5.setText("YOU LOSEEEE! :(((");
         }
     }
 }

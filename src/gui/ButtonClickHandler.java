@@ -9,7 +9,7 @@ import javax.swing.*;
 public class ButtonClickHandler implements ActionListener
 {
     private String msg;
-    Play p = new Play(3);
+    Play p = new Play(7);
 
     public ButtonClickHandler(String msg)
     {
